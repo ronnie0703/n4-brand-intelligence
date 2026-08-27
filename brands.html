@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>N4 Brand Intelligence — Brands</title>
+<link rel="stylesheet" href="assets/style.css" />
+<script src="assets/vendor/chart.umd.min.js"></script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand-mark">
+      <span class="dot"></span>
+      <div>N4 Brand Intelligence<small>Social performance &amp; events</small></div>
+    </div>
+    <nav class="mainnav">
+      <a href="index.html">Overview</a>
+      <a href="brands.html">Brands</a>
+      <a href="videos.html">Videos</a>
+      <a href="events.html">Events</a>
+      <a href="submit-photo.html">Submit Photo</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="page-head">
+    <h1>Brands</h1>
+    <p>Every brand N4 carries, compared side by side across Instagram and TikTok.</p>
+    <div class="updated-pill" id="updatedPill">Loading…</div>
+  </div>
+
+  <div class="section">
+    <h2>Followers by brand</h2>
+    <div class="chart-card"><canvas id="followerChart" height="90"></canvas></div>
+  </div>
+
+  <div class="section">
+    <h2>Median views per video</h2>
+    <p class="sub">Typical (median) view count per video — a better read on consistency than a single viral hit.</p>
+    <div class="chart-card"><canvas id="viewsChart" height="90"></canvas></div>
+  </div>
+
+  <div class="section">
+    <h2>Full comparison</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Brand</th><th>Platform</th><th>Handle</th><th>Followers</th><th>Posts/wk</th><th>Median views</th><th>Best video</th><th>Views/follower</th></tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Brand detail</h2>
+    <p class="sub">Weekly trend lines will appear here automatically once <code>data/metrics.json</code> has more than one dated entry per brand.</p>
+    <div id="brandDetails"></div>
+  </div>
+</main>
+
+<footer class="sitefoot">N4 Brand Intelligence — internal reporting site. Data updated manually each week.</footer>
+
+<script src="assets/app.js"></script>
+<script>
+(async function () {
+  const metrics = await loadJSON("data/metrics.json");
+  document.getElementById("updatedPill").innerHTML = `Last updated <b>${fmtDate(metrics.lastUpdated)}</b>`;
+  const brands = metrics.brands.filter(b => !b.noDataYet);
+
+  // ---- table ----
+  const rows = [];
+  brands.forEach(b => {
+    if (b.instagram) rows.push({ b, platform: "Instagram", d: b.instagram });
+    if (b.tiktok) rows.push({ b, platform: "TikTok", d: b.tiktok });
+  });
+  function logoSm(b) {
+    return b.logo
+      ? `<img class="brand-logo-sm" src="${b.logo}" alt="" />`
+      : `<span class="swatch" style="background:${b.color}"></span>`;
+  }
+  function logoMd(b) {
+    return b.logo
+      ? `<img class="brand-logo-md" src="${b.logo}" alt="" />`
+      : `<span class="swatch" style="background:${b.color}"></span>`;
+  }
+
+  document.getElementById("tableBody").innerHTML = rows.map(r => `
+    <tr>
+      <td class="brandcell">${logoSm(r.b)}${r.b.name}</td>
+      <td>${r.platform}</td>
+      <td><a href="${r.d.url || '#'}" target="_blank" rel="noopener">${r.d.handle}</a></td>
+      <td>${fmtNum(r.d.followers)}</td>
+      <td>${r.d.postsPerWeek ?? "—"}</td>
+      <td>${fmtNum(r.d.medianViews)}</td>
+      <td>${fmtNum(r.d.bestVideoViews)}</td>
+      <td>${r.d.viewsPerFollower ?? "—"}</td>
+    </tr>`).join("");
+
+  // ---- follower chart ----
+  new Chart(document.getElementById("followerChart"), {
+    type: "bar",
+    data: {
+      labels: brands.map(b => b.name),
+      datasets: [
+        { label: "Instagram", data: brands.map(b => b.instagram ? b.instagram.followers : 0), backgroundColor: "#e1306c" },
+        { label: "TikTok", data: brands.map(b => b.tiktok ? b.tiktok.followers : 0), backgroundColor: "#111827" },
+      ],
+    },
+    options: { responsive: true, plugins: { legend: { position: "bottom" } }, scales: { y: { beginAtZero: true } } },
+  });
+
+  // ---- median views chart ----
+  new Chart(document.getElementById("viewsChart"), {
+    type: "bar",
+    data: {
+      labels: brands.map(b => b.name),
+      datasets: [
+        { label: "Instagram", data: brands.map(b => b.instagram ? b.instagram.medianViews : 0), backgroundColor: "#e1306c" },
+        { label: "TikTok", data: brands.map(b => b.tiktok ? b.tiktok.medianViews : 0), backgroundColor: "#111827" },
+      ],
+    },
+    options: { responsive: true, plugins: { legend: { position: "bottom" } }, scales: { y: { beginAtZero: true } } },
+  });
+
+  // ---- detail cards ----
+  document.getElementById("brandDetails").innerHTML = brands.map(b => `
+    <div class="card" id="${b.id}" style="margin-bottom:16px;">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+        ${logoMd(b)}
+        <h3 style="margin:0;">${b.name}</h3>
+      </div>
+      <div class="grid cols-2">
+        ${b.instagram ? `<div><div class="plat-stat"><span class="tag">Instagram · ${b.instagram.handle}</span></div>
+          <div class="no-data">Median length ${b.instagram.medianLengthSec ?? "—"}s · ${b.instagram.postsPerWeek ?? "—"} posts/wk</div></div>` : `<div class="no-data">No Instagram data</div>`}
+        ${b.tiktok ? `<div><div class="plat-stat"><span class="tag">TikTok · ${b.tiktok.handle}</span></div>
+          <div class="no-data">${b.tiktok.postsPerWeek ?? "—"} posts/wk${b.tiktok.views60d ? ` · ${fmtNum(b.tiktok.views60d)} views in last 60 days (${b.tiktok.views60dChangePct > 0 ? "+" : ""}${b.tiktok.views60dChangePct}%)` : ""}</div></div>` : `<div class="no-data">No TikTok data</div>`}
+      </div>
+      ${b.tiktok && b.tiktok.trafficForYouPct ? `
+        <div style="margin-top:12px;">
+          <div class="plat-stat"><span class="tag">TikTok traffic source</span></div>
+          <div class="no-data">For You ${b.tiktok.trafficForYouPct}% · Search ${b.tiktok.trafficSearchPct}% · Other ${b.tiktok.trafficOtherPct}%</div>
+        </div>` : ""}
+    </div>
+  `).join("");
+})();
+</script>
+</body>
+</html>

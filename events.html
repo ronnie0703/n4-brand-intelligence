@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>N4 Brand Intelligence — Events</title>
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand-mark">
+      <span class="dot"></span>
+      <div>N4 Brand Intelligence<small>Social performance &amp; events</small></div>
+    </div>
+    <nav class="mainnav">
+      <a href="index.html">Overview</a>
+      <a href="brands.html">Brands</a>
+      <a href="videos.html">Videos</a>
+      <a href="events.html">Events</a>
+      <a href="submit-photo.html">Submit Photo</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="page-head">
+    <h1>Events</h1>
+    <p>Current and upcoming promotions, sales, and campaigns. Edit <code>data/events.json</code> to add or update one — no code required.</p>
+  </div>
+
+  <div class="section">
+    <h2>Current</h2>
+    <div class="grid cols-3" id="currentGrid"></div>
+  </div>
+
+  <div class="section">
+    <h2>Upcoming</h2>
+    <div class="grid cols-3" id="upcomingGrid"></div>
+  </div>
+
+  <div class="section">
+    <h2>Past</h2>
+    <div class="grid cols-3" id="pastGrid"></div>
+  </div>
+</main>
+
+<footer class="sitefoot">N4 Brand Intelligence — internal reporting site. Data updated manually each week.</footer>
+
+<script src="assets/app.js"></script>
+<script>
+(async function () {
+  let data;
+  try {
+    data = await loadJSON("data/events.json");
+  } catch (e) {
+    document.getElementById("currentGrid").innerHTML = `<div class="empty-state">Couldn't load events.</div>`;
+    return;
+  }
+
+  const groups = { current: [], upcoming: [], past: [] };
+  data.events.forEach(ev => (groups[ev.status] || groups.current).push(ev));
+
+  // Upcoming: soonest first. Past: most recent first. Missing dates sort last within their group.
+  groups.upcoming.sort((a, b) => (a.date || "9999").localeCompare(b.date || "9999"));
+  groups.past.sort((a, b) => (b.date || "").localeCompare(a.date || ""));
+
+  function card(ev) {
+    const statusBadge = ev.placeholder
+      ? `<span class="badge placeholder">Needs confirming</span>`
+      : `<span class="badge ${ev.status}">${ev.status}</span>`;
+    const photo = eventPhotoMarkup(ev);
+    return `<div class="event-card">
+      ${photo}
+      <div class="status-row">${statusBadge}<span class="datebar">${ev.dateLabel || ""}</span></div>
+      <h3>${ev.title}</h3>
+      ${ev.brand ? `<div class="no-data">${ev.brand}</div>` : ""}
+      <p>${ev.description || ""}</p>
+      ${ev.link ? `<a class="open" href="${ev.link}" target="_blank" rel="noopener">More info →</a>` : ""}
+    </div>`;
+  }
+
+  document.getElementById("currentGrid").innerHTML = groups.current.length
+    ? groups.current.map(card).join("")
+    : `<div class="empty-state" style="grid-column:1/-1;">Nothing marked as current right now.</div>`;
+
+  document.getElementById("upcomingGrid").innerHTML = groups.upcoming.length
+    ? groups.upcoming.map(card).join("")
+    : `<div class="empty-state" style="grid-column:1/-1;">Nothing on the calendar yet.</div>`;
+
+  document.getElementById("pastGrid").innerHTML = groups.past.length
+    ? groups.past.map(card).join("")
+    : `<div class="empty-state" style="grid-column:1/-1;">No past events logged yet.</div>`;
+
+  initPhotoGalleries(document.querySelector("main"));
+})();
+</script>
+</body>
+</html>

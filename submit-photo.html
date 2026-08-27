@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>N4 Brand Intelligence — Submit a Photo</title>
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand-mark">
+      <span class="dot"></span>
+      <div>N4 Brand Intelligence<small>Social performance &amp; events</small></div>
+    </div>
+    <nav class="mainnav">
+      <a href="index.html">Overview</a>
+      <a href="brands.html">Brands</a>
+      <a href="videos.html">Videos</a>
+      <a href="events.html">Events</a>
+      <a href="submit-photo.html">Submit Photo</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="page-head">
+    <h1>Submit an event photo</h1>
+    <p>Got a real photo from one of the workshops or roadshows below? Upload it here and it'll land in N4's Netlify submissions inbox for the team to review and add to the site.</p>
+  </div>
+
+  <form
+    name="event-photo-submission"
+    method="POST"
+    data-netlify="true"
+    netlify-honeypot="bot-field"
+    enctype="multipart/form-data"
+    action="submit-photo-thanks.html"
+    class="card photo-form"
+    id="photoForm"
+  >
+    <input type="hidden" name="form-name" value="event-photo-submission" />
+    <p class="hp-field">
+      <label>Leave this field blank<input name="bot-field" /></label>
+    </p>
+
+    <div class="form-field">
+      <label for="eventSelect">Which event is this photo from? <span class="req">*</span></label>
+      <select name="event" id="eventSelect" required>
+        <option value="">Loading events…</option>
+      </select>
+    </div>
+
+    <div class="form-field">
+      <label for="photoInput">Photo <span class="req">*</span></label>
+      <input type="file" name="photo" id="photoInput" accept="image/*" required />
+      <div class="hint">JPG or PNG. A real photo from the event — no stock or AI-generated images, please.</div>
+    </div>
+
+    <div class="form-field">
+      <label for="captionInput">Caption or details <span class="opt">(optional)</span></label>
+      <textarea name="caption" id="captionInput" placeholder="Where/when it was taken, who's in it, anything worth knowing"></textarea>
+    </div>
+
+    <div class="form-field">
+      <label for="nameInput">Your name <span class="opt">(optional)</span></label>
+      <input type="text" name="name" id="nameInput" placeholder="So we can credit you" />
+    </div>
+
+    <div class="form-field">
+      <label for="emailInput">Email <span class="opt">(optional)</span></label>
+      <input type="email" name="email" id="emailInput" placeholder="In case we have questions" />
+    </div>
+
+    <button type="submit" class="btn-primary">Submit photo</button>
+    <p class="form-note">Submissions go straight to N4's Netlify dashboard (Forms → event-photo-submission). Someone on the team reviews each one and adds approved photos to the event on this site — nothing appears automatically.</p>
+  </form>
+</main>
+
+<footer class="sitefoot">N4 Brand Intelligence — internal reporting site. Data updated manually each week.</footer>
+
+<script src="assets/app.js"></script>
+<script>
+(async function () {
+  const select = document.getElementById("eventSelect");
+  let data;
+  try {
+    data = await loadJSON("data/events.json");
+  } catch (e) {
+    select.innerHTML = `<option value="">Couldn't load events — refresh to try again</option>`;
+    return;
+  }
+
+  const groups = { current: [], upcoming: [], past: [] };
+  data.events.forEach(ev => (groups[ev.status] || groups.past).push(ev));
+
+  function optionsFor(list) {
+    return list.map(ev => `<option value="${ev.id}">${ev.title}${ev.dateLabel ? " — " + ev.dateLabel : ""}</option>`).join("");
+  }
+
+  const parts = [`<option value="">Select an event…</option>`];
+  if (groups.current.length) parts.push(`<optgroup label="Current">${optionsFor(groups.current)}</optgroup>`);
+  if (groups.upcoming.length) parts.push(`<optgroup label="Upcoming">${optionsFor(groups.upcoming)}</optgroup>`);
+  if (groups.past.length) parts.push(`<optgroup label="Past">${optionsFor(groups.past)}</optgroup>`);
+  parts.push(`<option value="__other">Other / not listed</option>`);
+
+  select.innerHTML = parts.join("");
+})();
+</script>
+</body>
+</html>

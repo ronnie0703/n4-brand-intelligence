@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>N4 Brand Intelligence — Videos</title>
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand-mark">
+      <span class="dot"></span>
+      <div>N4 Brand Intelligence<small>Social performance &amp; events</small></div>
+    </div>
+    <nav class="mainnav">
+      <a href="index.html">Overview</a>
+      <a href="brands.html">Brands</a>
+      <a href="videos.html">Videos</a>
+      <a href="events.html">Events</a>
+      <a href="submit-photo.html">Submit Photo</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="page-head">
+    <h1>Videos</h1>
+    <p>Every video lives in <code>data/videos.json</code>. TikTok links embed and play right here; Instagram Reels get a one-click card straight to the video (Instagram's public embed widget needs a Meta-approved app to preview inline, which N4 doesn't have set up yet).</p>
+  </div>
+
+  <div class="section">
+    <h2>Try a link</h2>
+    <p class="sub">Paste any public TikTok video URL for a live inline preview, or an Instagram Reel URL for a watch card, before adding it permanently.</p>
+    <div class="card" style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+      <input id="previewUrl" type="text" placeholder="https://www.tiktok.com/@handle/video/... or https://www.instagram.com/reel/..." style="flex:1;min-width:240px;padding:10px 12px;border:1px solid var(--border);border-radius:8px;font-size:.9rem;" />
+      <button id="previewBtn" style="padding:10px 18px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-weight:600;cursor:pointer;">Preview</button>
+    </div>
+    <div id="previewSlot" style="max-width:300px;margin-top:16px;"></div>
+  </div>
+
+  <div class="section">
+    <h2>Video library</h2>
+    <div class="video-grid" id="videoGrid"></div>
+  </div>
+</main>
+
+<footer class="sitefoot">N4 Brand Intelligence — internal reporting site. Data updated manually each week.</footer>
+
+<script src="assets/app.js"></script>
+<script>
+async function embedTikTok(url, slotEl) {
+  slotEl.innerHTML = `<div class="embed-slot">Loading…</div>`;
+  try {
+    const res = await fetch(`/api/tiktok-oembed?url=${encodeURIComponent(url)}`);
+    const data = await res.json();
+    if (data.html) {
+      slotEl.innerHTML = `<div class="embed-slot">${data.html}</div>`;
+      // TikTok's embed script (only needs to load once globally)
+      if (!window.__tiktokEmbedScriptLoaded) {
+        const s = document.createElement("script");
+        s.src = "https://www.tiktok.com/embed.js";
+        s.async = true;
+        document.body.appendChild(s);
+        window.__tiktokEmbedScriptLoaded = true;
+      } else if (window.tiktokEmbed && window.tiktokEmbed.lib && window.tiktokEmbed.lib.render) {
+        window.tiktokEmbed.lib.render();
+      }
+    } else {
+      slotEl.innerHTML = `<div class="embed-slot">Couldn't embed this link.</div>`;
+    }
+  } catch (e) {
+    slotEl.innerHTML = `<div class="embed-slot">Couldn't reach TikTok.</div>`;
+  }
+}
+
+// Instagram's public embed widget requires a Meta-approved app to render reliably these days —
+// without that (Ronnie doesn't have Meta API access set up yet), it 503s more often than not.
+// Rather than show a broken iframe, use a real frame captured from the post as a thumbnail
+// and link straight out to the playable Reel.
+const igIcon = `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="2" y="2" width="20" height="20" rx="6" stroke="#fff" stroke-width="1.6"/>
+  <circle cx="12" cy="12" r="5" stroke="#fff" stroke-width="1.6"/>
+  <circle cx="17.4" cy="6.6" r="1.1" fill="#fff"/>
+</svg>`;
+
+function instagramCard(url, thumbnail) {
+  const style = thumbnail ? ` style="background-image:url('${thumbnail}')"` : "";
+  return `<a class="ig-watch${thumbnail ? " has-thumb" : ""}" href="${url}" target="_blank" rel="noopener"${style}>
+    <div class="ig-watch-badge">${igIcon}<span>Watch on Instagram</span></div>
+  </a>`;
+}
+
+function embedInstagram(url, slotEl, thumbnail) {
+  slotEl.classList.add("ig-slot");
+  slotEl.innerHTML = instagramCard(url, thumbnail);
+}
+
+function platformLabel(p) {
+  if (p === "tiktok") return "TikTok";
+  if (p === "instagram") return "Instagram";
+  return p || "";
+}
+
+document.getElementById("previewBtn").addEventListener("click", () => {
+  const url = document.getElementById("previewUrl").value.trim();
+  if (!url) return;
+  const slot = document.getElementById("previewSlot");
+  if (/tiktok\.com/i.test(url)) embedTikTok(url, slot);
+  else if (/instagram\.com/i.test(url)) embedInstagram(url, slot);
+  else slot.innerHTML = `<div class="embed-slot">Paste a TikTok or Instagram link.</div>`;
+});
+
+(async function () {
+  const grid = document.getElementById("videoGrid");
+  let data, logoByName = {};
+  try {
+    data = await loadJSON("data/videos.json");
+  } catch (e) {
+    grid.innerHTML = `<div class="empty-state">Couldn't load the video library.</div>`;
+    return;
+  }
+  try {
+    const metrics = await loadJSON("data/metrics.json");
+    metrics.brands.forEach(b => { if (b.logo) logoByName[b.name] = b.logo; });
+  } catch (e) { /* logos are a nice-to-have; skip silently if metrics fails */ }
+
+  data.videos.sort((a, b) => (b.postedAt || "").localeCompare(a.postedAt || ""));
+
+  if (!data.videos.length) {
+    grid.innerHTML = `<div class="add-video-card" style="grid-column:1/-1;">
+      <strong>No videos added yet</strong>
+      <span>Add an entry to <code>data/videos.json</code> with a TikTok URL and it'll show up here, embedded and playable.</span>
+    </div>`;
+    return;
+  }
+
+  grid.innerHTML = data.videos.map((v, i) => `
+    <div class="video-card${v.platform === "instagram" ? " instagram" : ""}">
+      <div class="embed-slot" id="slot-${i}">Loading…</div>
+      <div class="meta">
+        <div class="brandline">${logoByName[v.brand] ? `<img class="brand-logo-sm" style="width:16px;height:16px;vertical-align:-3px;margin-right:5px;" src="${logoByName[v.brand]}" alt="" />` : ""}${v.brand || ""}${v.platform ? " · " + platformLabel(v.platform) : ""}${v.postedAt ? ` · ${fmtDate(v.postedAt)}` : ""}</div>
+        <h4>${v.caption || ""}</h4>
+        <a class="open" href="${v.url}" target="_blank" rel="noopener">Open on ${platformLabel(v.platform) || "platform"} →</a>
+      </div>
+    </div>
+  `).join("");
+
+  data.videos.forEach((v, i) => {
+    if (v.platform === "tiktok") {
+      embedTikTok(v.url, document.getElementById(`slot-${i}`));
+    } else if (v.platform === "instagram") {
+      embedInstagram(v.url, document.getElementById(`slot-${i}`), v.thumbnail);
+    } else {
+      document.getElementById(`slot-${i}`).innerHTML = `<div class="embed-slot">Preview not available for this platform yet</div>`;
+    }
+  });
+})();
+</script>
+</body>
+</html>

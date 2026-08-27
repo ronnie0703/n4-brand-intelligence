@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>N4 Brand Intelligence — Overview</title>
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand-mark">
+      <span class="dot"></span>
+      <div>
+        N4 Brand Intelligence
+        <small>Social performance &amp; events</small>
+      </div>
+    </div>
+    <nav class="mainnav">
+      <a href="index.html">Overview</a>
+      <a href="brands.html">Brands</a>
+      <a href="videos.html">Videos</a>
+      <a href="events.html">Events</a>
+      <a href="submit-photo.html">Submit Photo</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="page-head">
+    <h1>Overview</h1>
+    <p>Follower counts and video performance across every brand N4 carries, in one place.</p>
+    <div class="updated-pill" id="updatedPill">Loading…</div>
+  </div>
+
+  <div class="section">
+    <h2>Totals across all accounts</h2>
+    <div class="grid cols-4" id="totalsGrid"></div>
+  </div>
+
+  <div class="section">
+    <h2>By brand</h2>
+    <p class="sub">Instagram + TikTok followers per brand. Click a card for the full breakdown.</p>
+    <div class="grid cols-4" id="brandGrid"></div>
+  </div>
+
+  <div class="section">
+    <h2>Happening now</h2>
+    <p class="sub">Current &amp; upcoming events — <a href="events.html" style="color:var(--accent-2);font-weight:600;">see all →</a></p>
+    <div class="grid cols-3" id="eventsPreview"></div>
+  </div>
+
+  <div class="section">
+    <h2>Latest videos</h2>
+    <p class="sub">Newest additions to the video library — <a href="videos.html" style="color:var(--accent-2);font-weight:600;">see all →</a></p>
+    <div id="videosPreview"></div>
+  </div>
+</main>
+
+<footer class="sitefoot">N4 Brand Intelligence — internal reporting site. Data updated manually each week.</footer>
+
+<script src="assets/app.js"></script>
+<script>
+(async function () {
+  const metrics = await loadJSON("data/metrics.json");
+  document.getElementById("updatedPill").innerHTML = `Last updated <b>${fmtDate(metrics.lastUpdated)}</b>`;
+
+  const active = metrics.brands.filter(b => !b.noDataYet);
+
+  // Totals
+  let totalIG = 0, totalTT = 0, bestVideo = { views: 0, brand: "", platform: "" };
+  active.forEach(b => {
+    if (b.instagram) {
+      totalIG += b.instagram.followers || 0;
+      if ((b.instagram.bestVideoViews || 0) > bestVideo.views) {
+        bestVideo = { views: b.instagram.bestVideoViews, brand: b.name, platform: "Instagram" };
+      }
+    }
+    if (b.tiktok) {
+      totalTT += b.tiktok.followers || 0;
+      if ((b.tiktok.bestVideoViews || 0) > bestVideo.views) {
+        bestVideo = { views: b.tiktok.bestVideoViews, brand: b.name, platform: "TikTok" };
+      }
+    }
+  });
+
+  const totalsGrid = document.getElementById("totalsGrid");
+  totalsGrid.innerHTML = `
+    <div class="card stat"><div class="accent-bar" style="background:var(--accent-2)"></div>
+      <span class="plat-stat"><span class="tag">Brands tracked</span><b>${active.length}</b></span></div>
+    <div class="card stat"><div class="accent-bar" style="background:#e1306c"></div>
+      <span class="plat-stat"><span class="tag">Instagram followers</span><b>${fmtNum(totalIG)}</b></span></div>
+    <div class="card stat"><div class="accent-bar" style="background:#000"></div>
+      <span class="plat-stat"><span class="tag">TikTok followers</span><b>${fmtNum(totalTT)}</b></span></div>
+    <div class="card stat"><div class="accent-bar" style="background:var(--good)"></div>
+      <span class="plat-stat"><span class="tag">Best single video</span><b>${fmtNum(bestVideo.views)}</b></span>
+      <div class="no-data" style="margin-top:6px;">${bestVideo.brand} · ${bestVideo.platform}</div></div>
+  `;
+
+  // Brand cards
+  const brandGrid = document.getElementById("brandGrid");
+  function logoTag(b, cls) {
+    return b.logo
+      ? `<img class="${cls}" src="${b.logo}" alt="${b.name} logo" />`
+      : `<div class="${cls === 'brand-logo' ? 'brand-logo-placeholder' : 'brand-logo-placeholder'}" style="background:${b.color}">${b.name.charAt(0)}</div>`;
+  }
+
+  brandGrid.innerHTML = metrics.brands.map(b => {
+    if (b.noDataYet) {
+      return `<div class="card stat"><div class="accent-bar" style="background:${b.color}"></div>
+        <div class="logo-row">${logoTag(b, 'brand-logo')}<h3>${b.name}</h3></div>
+        <div class="no-data" style="margin-top:8px;">No social data tracked yet</div></div>`;
+    }
+    return `<a href="brands.html#${b.id}"><div class="card stat">
+      <div class="accent-bar" style="background:${b.color}"></div>
+      <div class="logo-row">${logoTag(b, 'brand-logo')}<h3>${b.name}</h3></div>
+      <div class="platforms">
+        ${b.instagram ? `<div class="plat-stat"><span class="tag">Instagram</span><b>${fmtNum(b.instagram.followers)}</b></div>` : `<div class="plat-stat"><span class="tag">Instagram</span><b>—</b></div>`}
+        ${b.tiktok ? `<div class="plat-stat"><span class="tag">TikTok</span><b>${fmtNum(b.tiktok.followers)}</b></div>` : `<div class="plat-stat"><span class="tag">TikTok</span><b>—</b></div>`}
+      </div>
+      <span class="view-link">View brand →</span>
+    </div></a>`;
+  }).join("");
+
+  // Events preview
+  try {
+    const eventsData = await loadJSON("data/events.json");
+    const statusRank = { current: 0, upcoming: 1, past: 2 };
+    const sortedEvents = [...eventsData.events].sort((a, b) => {
+      const rankDiff = (statusRank[a.status] ?? 3) - (statusRank[b.status] ?? 3);
+      if (rankDiff !== 0) return rankDiff;
+      // upcoming: soonest first; current/past: most recent first
+      const dir = a.status === "upcoming" ? 1 : -1;
+      return dir * (a.date || "").localeCompare(b.date || "");
+    });
+    const preview = sortedEvents.slice(0, 3);
+    const eventsPreview = document.getElementById("eventsPreview");
+    eventsPreview.innerHTML = preview.length ? preview.map(renderEventCard).join("") :
+      `<div class="empty-state">No events added yet. Add one on the Events page.</div>`;
+    initPhotoGalleries(eventsPreview);
+  } catch (e) {
+    document.getElementById("eventsPreview").innerHTML = `<div class="empty-state">Couldn't load events.</div>`;
+  }
+
+  // Videos preview
+  try {
+    const videosData = await loadJSON("data/videos.json");
+    const previewWrap = document.getElementById("videosPreview");
+    const sorted = [...videosData.videos].sort((a, b) => (b.postedAt || "").localeCompare(a.postedAt || ""));
+    if (!sorted.length) {
+      previewWrap.innerHTML = `<div class="empty-state">No videos added yet. Paste a TikTok link on the Videos page and it'll show up here.</div>`;
+    } else {
+      previewWrap.innerHTML = `<div class="video-grid">${sorted.slice(0, 4).map(v => `<div class="video-card"><div class="meta"><div class="brandline">${v.brand || ""}${v.postedAt ? " · " + fmtDate(v.postedAt) : ""}</div><h4>${v.caption || v.url}</h4></div></div>`).join("")}</div>`;
+    }
+  } catch (e) {
+    document.getElementById("videosPreview").innerHTML = `<div class="empty-state">Couldn't load videos.</div>`;
+  }
+
+  function renderEventCard(ev) {
+    const statusBadge = ev.placeholder ? `<span class="badge placeholder">Needs confirming</span>` : `<span class="badge ${ev.status}">${ev.status}</span>`;
+    const photo = eventPhotoMarkup(ev);
+    return `<div class="event-card">
+      ${photo}
+      <div class="status-row">${statusBadge}<span class="datebar">${ev.dateLabel || ""}</span></div>
+      <h3>${ev.title}</h3>
+      <p>${ev.description || ""}</p>
+    </div>`;
+  }
+})();
+</script>
+</body>
+</html>
