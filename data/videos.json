@@ -1,0 +1,101 @@
+{
+  "notes": "Populated 23 Aug 2026 from each brand's live TikTok and Instagram profiles (pinned/most recent videos + Reels). postedAt is the video's actual upload date — decoded from the video ID for TikTok, read off the post itself for Instagram. Instagram entries carry a thumbnail (a real frame captured from the post, since Instagram's embed widget needs Meta API access N4 doesn't have) — swap assets/videos/ig-<brand>.jpg for a fresh capture whenever the video changes. Add a new entry whenever a fresh video goes up — platform must be 'tiktok' or 'instagram' for the embed to render automatically. The site always sorts videos by postedAt (newest first), so just add entries in any order.",
+  "videos": [
+    {
+      "brand": "PGYTECH",
+      "platform": "instagram",
+      "url": "https://www.instagram.com/pgytech_malaysia/reel/DcVpko7j_1j/",
+      "caption": "Cream & Carry Everything — OneGo Lite Backpack in 16L Cream",
+      "postedAt": "2026-08-22",
+      "thumbnail": "assets/videos/ig-pgytech.jpg"
+    },
+    {
+      "brand": "Ulanzi",
+      "platform": "instagram",
+      "url": "https://www.instagram.com/ulanzi_malaysia/reel/DcTSkzFFQ_6/",
+      "caption": "A tripod that opens itself? Meet the SK-21 Magnetic Auto-Open Tripod",
+      "postedAt": "2026-08-22",
+      "thumbnail": "assets/videos/ig-ulanzi.jpg"
+    },
+    {
+      "brand": "N4 Camera Store",
+      "platform": "instagram",
+      "url": "https://www.instagram.com/n4camerastore/reel/DcVqoqkDxT7/",
+      "caption": "Parkson IOI City Mall Putrajaya pop-up, 22–25 Aug — spend RM500, get a free SnapRoll",
+      "postedAt": "2026-08-22",
+      "thumbnail": "assets/videos/ig-n4camerastore.jpg"
+    },
+    {
+      "brand": "Godox",
+      "platform": "instagram",
+      "url": "https://www.instagram.com/godox_malaysia/reel/DcTImhwuMZ1/",
+      "caption": "Not just RGB — RGBWW opens up more colour and lighting options",
+      "postedAt": "2026-08-22",
+      "thumbnail": "assets/videos/ig-godox.jpg"
+    },
+    {
+      "brand": "Polaroid",
+      "platform": "instagram",
+      "url": "https://www.instagram.com/polaroid_msia/reel/DcOCEtoDbIu/",
+      "caption": "Summer breeze, golden sunsets, and a Polaroid Go Generation 3",
+      "postedAt": "2026-08-20",
+      "thumbnail": "assets/videos/ig-polaroid.jpg"
+    },
+    {
+      "brand": "PGYTECH",
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@pgytech.malaysia/video/7676405466896944405",
+      "caption": "PGYTECH OneGo Lite Backpack",
+      "postedAt": "2026-08-21"
+    },
+    {
+      "brand": "Ulanzi",
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@ulanzi.my/video/7676330453237796117",
+      "caption": "UTO1 mini gadget",
+      "postedAt": "2026-08-21"
+    },
+    {
+      "brand": "N4 Camera Store",
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@n4camerastore/video/7675320369733012757",
+      "caption": "1,282 views",
+      "postedAt": "2026-08-18"
+    },
+    {
+      "brand": "Godox",
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@godox.malaysia/video/7672356994157694216",
+      "caption": "623 views",
+      "postedAt": "2026-08-10"
+    },
+    {
+      "brand": "Godox",
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@godox.malaysia/video/7671143421108587796",
+      "caption": "672 views",
+      "postedAt": "2026-08-07"
+    },
+    {
+      "brand": "N4 Camera Store",
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@n4camerastore/video/7583998002046520597",
+      "caption": "Pinned · 4,403 views",
+      "postedAt": "2025-12-15"
+    },
+    {
+      "brand": "PGYTECH",
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@pgytech.malaysia/video/7514551495526714680",
+      "caption": "Regang phone pun boleh nampak pro (pinned · 19.3K views)",
+      "postedAt": "2025-06-11"
+    },
+    {
+      "brand": "Ulanzi",
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@ulanzi.my/video/7365670943479450897",
+      "caption": "Ulanzi Step Open Tripod MT-44 (pinned)",
+      "postedAt": "2024-05-06"
+    }
+  ]
+}

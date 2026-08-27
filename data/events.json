@@ -1,0 +1,647 @@
+{
+  "notes": "Sourced 23 Aug 2026: current events come from each brand's live Instagram Stories/posts and N4's internal Lark Messenger chats (Marketing Team, Ulanzi Team MY); upcoming dates and the full 2026 past-events history come from Ronnie's shared Lark calendar and Messenger (internal team-only events, like staff outings and meetings, are deliberately left off this public list). 23 Aug 2026: sourced 2 more real photos (Canon Manjung Workshop, Bambu Lab Queensbay Roadshow) from N4 Camera Store's public Facebook page; every remaining workshop without a real photo now shows a placeholder pairing N4's logo with the relevant camera brand's logo (assets/events/placeholder-*.jpg), or N4's logo alone when no specific brand applies — these are identifiable by the \"assets/events/placeholder-\" filename, not by the \"placeholder\" field (that field drives the \"Needs confirming\" badge for events whose date/details aren't nailed down yet, which is a separate thing). 23 Aug 2026: swapped in real photos from Ronnie's own event folders for OPPO Workshop Penang (4 photos), Culture Heritage with Canon (4 photos), and Polaroid Go Gen 3 Launch Party, Penang (2 photos, replacing the CosWorld booth photo it was borrowing) — CosWorld Festival 2026 keeps its own copy of that photo. Bambu Lab Queensbay Roadshow's folder only had marketing/promo graphics, not candid photos, so it still uses its one real Facebook photo. Swap a placeholder image for a real photo in \"images\" as one turns up, ideally submitted via the new Submit a Photo page. Edit this file directly to add, remove, or update events — no code changes needed. Move an event's \"status\" to \"past\" once it wraps.",
+  "events": [
+    {
+      "id": "n4camerastore-parkson-ioi-city-popup",
+      "title": "Parkson IOI City Mall Putrajaya Pop-Up",
+      "brand": "N4 Camera Store",
+      "status": "current",
+      "dateLabel": "22–25 Aug 2026, 10am–10pm",
+      "description": "In-mall pop-up with live promos: spend RM500 get a free Escura SnapRoll (worth RM168), spend RM350 for a Lucky Draw entry, and BonusLink card holders get a RM30 voucher with RM300 spend.",
+      "link": "https://www.instagram.com/n4camerastore/reel/DcVqoqkDxT7/",
+      "images": [
+        "assets/events/parkson-bonuslink-cover.jpg",
+        "assets/events/parkson-bonuslink-booth-3.jpg",
+        "assets/events/parkson-bonuslink-booth-5.jpg",
+        "assets/events/parkson-bonuslink-booth-1.jpg",
+        "assets/events/parkson-bonuslink-booth-2.jpg",
+        "assets/events/parkson-bonuslink-booth-4.jpg"
+      ],
+      "placeholder": false,
+      "date": "2026-08-22"
+    },
+    {
+      "id": "animangaki-2026-ulanzi",
+      "title": "AniManGaki 2026",
+      "brand": "Ulanzi",
+      "status": "upcoming",
+      "dateLabel": "Fri, 28 Aug – Sun, 30 Aug 2026",
+      "description": "Ulanzi booth at AniManGaki 2026, Malaysia's anime & pop culture convention. Venue: Mines International Exhibition & Convention Centre, Jalan Dulang, Mines Wellness City, Seri Kembangan, Selangor.",
+      "link": "https://www.instagram.com/p/DcNsHSVj1Ts/",
+      "images": [
+        "assets/events/animangaki-2026.jpg",
+        "assets/events/animangaki-2026-lucky-draw.jpg"
+      ],
+      "placeholder": false,
+      "date": "2026-08-28"
+    },
+    {
+      "id": "sony-qb-roadshow-sep2026",
+      "title": "Sony QB Roadshow",
+      "brand": "Ulanzi, PGYTECH, Godox",
+      "status": "upcoming",
+      "dateLabel": "Thu, 3 Sep, 11.30am – Sun, 6 Sep 2026, 12pm",
+      "description": "Joint roadshow with Sony at Queensbay Mall, Persiaran Bayan Indah, Bayan Lepas, Penang, featuring Ulanzi, PGYTECH, and Godox gear.",
+      "link": "",
+      "images": [
+        "assets/events/placeholder-sony.jpg"
+      ],
+      "date": "2026-09-03"
+    },
+    {
+      "id": "n4-art-of-movement-fuji-workshop",
+      "title": "The Art of Movement Fuji Workshop",
+      "brand": "N4 Camera Store",
+      "status": "past",
+      "dateLabel": "Sat, 23 Aug 2026",
+      "description": "Fujifilm-focused photography workshop on motion and movement, hosted by N4 Camera Store.",
+      "link": "",
+      "images": [
+        "assets/events/art-of-movement-fuji-workshop.jpg"
+      ],
+      "date": "2026-08-23"
+    },
+    {
+      "id": "n4-commercial-portrait-masterclass-pangkor",
+      "title": "Commercial Portrait Masterclass",
+      "brand": "N4 Camera Store",
+      "status": "past",
+      "dateLabel": "Mon, 17 Aug – Thu, 20 Aug 2026",
+      "description": "Multi-day commercial portrait photography masterclass held on Pulau Pangkor, Perak, with N4's Marketing Team in attendance.",
+      "link": "",
+      "images": [
+        "assets/events/placeholder-n4.jpg"
+      ],
+      "date": "2026-08-17"
+    },
+    {
+      "id": "n4-frame-of-light-lumen",
+      "title": "Frame of Light by Lumen",
+      "brand": "N4 Camera Store",
+      "status": "past",
+      "dateLabel": "Sun, 16 Aug 2026",
+      "description": "Lighting-focused photography workshop hosted by N4 Camera Store.",
+      "link": "",
+      "images": [
+        "assets/events/placeholder-n4.jpg"
+      ],
+      "date": "2026-08-16"
+    },
+    {
+      "id": "n4-culture-heritage-canon",
+      "title": "Culture Heritage with Canon",
+      "brand": "N4 Camera Store",
+      "status": "past",
+      "dateLabel": "Sun, 16 Aug 2026",
+      "description": "Heritage-themed photography workshop presented with Canon.",
+      "link": "",
+      "images": [
+        "assets/events/canon-heritage-shoot-1.jpg",
+        "assets/events/canon-heritage-crew.jpg",
+        "assets/events/canon-heritage-set.jpg",
+        "assets/events/canon-heritage-behind-scenes.jpg"
+      ],
+      "date": "2026-08-16"
+    },
+    {
+      "id": "n4-oppo-workshop-penang",
+      "title": "OPPO Workshop Penang",
+      "brand": "N4 Camera Store",
+      "status": "past",
+      "dateLabel": "Sat, 15 Aug 2026",
+      "description": "Mobile photography workshop with OPPO, held in Penang.",
+      "link": "",
+      "images": [
+        "assets/events/oppo-workshop-mascot.jpg",
+        "assets/events/oppo-workshop-session-1.jpg",
+        "assets/events/oppo-workshop-session-2.jpg",
+        "assets/events/oppo-workshop-session-3.jpg"
+      ],
+      "date": "2026-08-15"
+    },
+    {
+      "id": "n4-photowalk-color-hunting-penang",
+      "title": "PhotoWalk: Color Hunting",
+      "brand": "N4 Camera Store",
+      "status": "past",
+      "dateLabel": "Sat, 15 Aug 2026",
+      "description": "Photo walk themed around “color hunting,” hosted by Creator Spotlight Club in partnership with N4 Camera Store and The Sunny Club. Attendees got to try the SnapRoll SX-70e digital film camera and received one free Polaroid film.",
+      "link": "",
+      "images": [
+        "assets/events/photowalk-color-hunting-poster.jpg",
+        "assets/events/photowalk-snaproll-perk.jpg",
+        "assets/events/photowalk-polaroid-perk.jpg"
+      ],
+      "date": "2026-08-15"
+    },
+    {
+      "id": "n4-fuji-workshop-carnival-aug",
+      "title": "Fuji Workshop Carnival",
+      "brand": "N4 Camera Store",
+      "status": "past",
+      "dateLabel": "Sat, 8 Aug 2026",
+      "description": "Fujifilm workshop carnival hosted by N4 Camera Store.",
+      "link": "",
+      "images": [
+        "assets/events/placeholder-fujifilm.jpg"
+      ],
+      "date": "2026-08-08"
+    },
+    {
+      "id": "n4-confucian-high-school-canon-workshop",
+      "title": "Confucian High School Canon Workshop",
+      "brand": "N4 Camera Store",
+      "status": "past",
+      "dateLabel": "Tue, 4 Aug 2026",
+      "description": "Canon photography workshop for students, run with N4 Camera Store trainers.",
+      "link": "",
+      "images": [
+        "assets/events/confucian-canon-workshop.jpg"
+      ],
+      "placeholder": false,
+      "date": "2026-08-04"
+    },
+    {
+      "id": "oribags-warehouse-sale-2026",
+      "title": "Oribags Warehouse Sale",
+      "brand": "Oribags",
+      "status": "past",
+      "dateLabel": "30 Jul – 2 Aug 2026, 11am–6pm",
+      "description": "Collaboration warehouse sale with Oribags at their Flagship Store, Setia Avenue, Setia Alam (No 18-2, Jalan Setia Prima S U13/S, Seksyen U13, 40170 Shah Alam, Selangor).",
+      "link": "",
+      "images": [
+        "assets/events/oribags-whsale-setup.jpg",
+        "assets/events/oribags-whsale-drinkware.jpg",
+        "assets/events/oribags-whsale-shopper.jpg",
+        "assets/events/oribags-whsale-top8.jpg",
+        "assets/events/oribags-whsale-thankyou.jpg"
+      ],
+      "placeholder": false,
+      "date": "2026-07-30"
+    },
+    {
+      "id": "n4-picture-of-us-bobo-tenten",
+      "title": "Picture of Us Workshop with Bobo and Ten Ten",
+      "brand": "N4 Camera Store",
+      "status": "past",
+      "dateLabel": "Sun, 26 Jul 2026, 8.30am – 1pm",
+      "description": "Portrait photography workshop guest-led by photographers Bobo and Ten Ten.",
+      "link": "",
+      "images": [
+        "assets/events/placeholder-n4.jpg"
+      ],
+      "date": "2026-07-26"
+    },
+    {
+      "id": "n4-bambu-lab-queensbay-roadshow",
+      "title": "Bambu Lab Queensbay Roadshow",
+      "brand": "N4 Camera Store",
+      "status": "past",
+      "dateLabel": "Wed, 22 Jul – Sun, 26 Jul 2026",
+      "description": "In-mall roadshow with 3D-printing brand Bambu Lab at Queensbay Mall, Persiaran Bayan Indah, Bayan Lepas, Penang.",
+      "link": "",
+      "placeholder": false,
+      "images": [
+        "assets/events/bambu-lab-queensbay-roadshow.jpg"
+      ],
+      "date": "2026-07-22"
+    },
+    {
+      "id": "n4-canon-firdaus-eos-master-workshop",
+      "title": "Canon Firdaus EOS Master Workshop",
+      "brand": "N4 Camera Store",
+      "status": "past",
+      "dateLabel": "Sun, 12 Jul 2026",
+      "description": "Canon EOS masterclass hosted at N4 Camera Store x Artishutter, JioSpace, Jalan 19/1B, Seksyen 19, Petaling Jaya, Selangor.",
+      "link": "",
+      "images": [
+        "assets/events/placeholder-canon.jpg"
+      ],
+      "date": "2026-07-12"
+    },
+    {
+      "id": "n4-fuji-penang-workshop-photojam",
+      "title": "Fuji Penang Workshop / Photojam One Day Camp",
+      "brand": "N4 Camera Store",
+      "status": "past",
+      "dateLabel": "Sat, 11 Jul 2026",
+      "description": "Fujifilm workshop held in conjunction with a Photojam one-day photography camp.",
+      "link": "",
+      "images": [
+        "assets/events/placeholder-fujifilm.jpg"
+      ],
+      "date": "2026-07-11"
+    },
+    {
+      "id": "polaroid-go-gen3-launch-penang",
+      "title": "Polaroid Go Gen 3 Launch Party, Penang",
+      "brand": "Polaroid",
+      "status": "past",
+      "dateLabel": "Fri, 10 Jul 2026, 11.30am – 2.30pm",
+      "description": "Public launch party for the Polaroid Go Gen 3 at Jetty 35 (Pengkalan Weld), Georgetown, Penang.",
+      "link": "",
+      "images": [
+        "assets/events/polaroid-launch-guests.jpg",
+        "assets/events/polaroid-launch-booth.jpg"
+      ],
+      "placeholder": false,
+      "date": "2026-07-10"
+    },
+    {
+      "id": "cosworld-festival-2026",
+      "title": "CosWorld Festival 2026 (4th Anniversary)",
+      "brand": "N4 Camera Store, Ulanzi, Polaroid",
+      "status": "past",
+      "dateLabel": "Fri, 3 Jul – Sun, 5 Jul 2026",
+      "description": "N4, Ulanzi, and Polaroid sponsored booths at CosWorld Festival's 4th anniversary — a cosplay, anime, and gaming festival at Island 88, Tanjong Tokong Road, Seri Tanjung Pinang, George Town, Penang, drawing an estimated 30,000–50,000 attendees.",
+      "link": "",
+      "images": [
+        "assets/events/cosworld-opening-ceremony.jpg",
+        "assets/events/cosworld-polaroid-booth.jpg"
+      ],
+      "placeholder": false,
+      "date": "2026-07-03"
+    },
+    {
+      "id": "n4-malaysia-gifts-fair-2026",
+      "title": "Malaysia Gifts Fair 2026",
+      "brand": "N4 Camera Store",
+      "status": "past",
+      "dateLabel": "Tue, 30 Jun, 10am – Thu, 2 Jul 2026, 6pm",
+      "description": "Trade show exhibitor booth at Malaysia Gifts Fair 2026, Kuala Lumpur Convention Centre, Hall 1–4.",
+      "link": "",
+      "images": [
+        "assets/events/placeholder-n4.jpg"
+      ],
+      "date": "2026-06-30"
+    },
+    {
+      "id": "n4-fjm-ladies-photowalk-penang-2026",
+      "title": "FJM Ladies Photowalk 2026, Penang",
+      "brand": "N4 Camera Store",
+      "status": "past",
+      "dateLabel": "Sat, 27 Jun 2026, 4pm – 10pm",
+      "description": "Ladies-only photowalk in conjunction with a Penang festival, open to photographers of all levels, from beginners to experienced shooters.",
+      "link": "",
+      "images": [
+        "assets/events/placeholder-n4.jpg"
+      ],
+      "date": "2026-06-27"
+    },
+    {
+      "id": "n4-kota-bharu-photography-exhibition-2026",
+      "title": "Kota Bharu Photography Exhibition",
+      "brand": "N4 Camera Store",
+      "status": "past",
+      "dateLabel": "Wed, 17 Jun – Sat, 20 Jun 2026",
+      "description": "Photography exhibition and event at Gelanggang Seni, Jalan Mahmood, Bandar Kota Bharu, Kota Bharu, Kelantan.",
+      "link": "",
+      "images": [
+        "assets/events/kota-bharu-photography-exhibition.jpg"
+      ],
+      "placeholder": false,
+      "date": "2026-06-17"
+    },
+    {
+      "id": "n4-future-forge-2026",
+      "title": "FUTURE FORGE 2026",
+      "brand": "N4 Camera Store",
+      "status": "past",
+      "dateLabel": "Sat, 13 Jun 2026, 9am – 4.30pm",
+      "description": "Photography event held at Gurney Bay Hotel, A PARKROYAL Partner Hotel, Gurney Drive, George Town, Penang.",
+      "link": "",
+      "images": [
+        "assets/events/placeholder-n4.jpg"
+      ],
+      "date": "2026-06-13"
+    },
+    {
+      "id": "n4-yl-fair-ioi-city-mall-2026",
+      "title": "YL Fair, IOI City Mall",
+      "brand": "N4 Camera Store",
+      "status": "past",
+      "dateLabel": "Tue, 9 Jun – Sun, 14 Jun 2026",
+      "description": "In-mall fair booth at IOI City Mall, Lebuh IRC, IOI Resort, Putrajaya, Selangor.",
+      "link": "",
+      "images": [
+        "assets/events/placeholder-n4.jpg"
+      ],
+      "date": "2026-06-09"
+    },
+    {
+      "id": "n4-creative-night-portrait-canon-penang",
+      "title": "Creative Night Portrait, Canon Penang",
+      "brand": "N4 Camera Store",
+      "status": "past",
+      "dateLabel": "Sat, 6 Jun 2026",
+      "description": "Night portrait photography workshop presented with Canon in Penang.",
+      "link": "",
+      "images": [
+        "assets/events/placeholder-canon.jpg"
+      ],
+      "date": "2026-06-06"
+    },
+    {
+      "id": "n4-bobo-tiantian-flash-photography-seremban",
+      "title": "Bobo & Tiantian Flash Photography Workshop",
+      "brand": "N4 Camera Store",
+      "status": "past",
+      "dateLabel": "Sat, 23 May 2026, 1pm – 7pm",
+      "description": "Flash photography workshop at Jalan Tun Dr. Ismail, Taman Unian, 70200 Seremban, Negeri Sembilan.",
+      "link": "",
+      "images": [
+        "assets/events/placeholder-n4.jpg"
+      ],
+      "date": "2026-05-23"
+    },
+    {
+      "id": "n4-canon-manjung-workshop",
+      "title": "Canon Manjung Workshop",
+      "brand": "N4 Camera Store",
+      "status": "past",
+      "dateLabel": "Sat, 16 May 2026",
+      "description": "Canon photography workshop held in Manjung, Perak.",
+      "link": "",
+      "placeholder": false,
+      "images": [
+        "assets/events/canon-manjung-workshop.jpg"
+      ],
+      "date": "2026-05-16"
+    },
+    {
+      "id": "n4-canon-r6m3-jb-event",
+      "title": "Canon R6 Mark III, Johor Bahru Event",
+      "brand": "N4 Camera Store",
+      "status": "past",
+      "dateLabel": "Sat, 9 May – Sun, 10 May 2026",
+      "description": "Canon EOS R6 Mark III launch event in Johor Bahru.",
+      "link": "",
+      "images": [
+        "assets/events/placeholder-canon.jpg"
+      ],
+      "date": "2026-05-09"
+    },
+    {
+      "id": "n4-fujifilm-manjung-workshop",
+      "title": "Fujifilm Manjung Workshop",
+      "brand": "N4 Camera Store",
+      "status": "past",
+      "dateLabel": "Sun, 26 Apr 2026",
+      "description": "Fujifilm photography workshop held in Manjung, Perak.",
+      "link": "",
+      "images": [
+        "assets/events/placeholder-fujifilm.jpg"
+      ],
+      "date": "2026-04-26"
+    },
+    {
+      "id": "n4-monash-pets-worlds-workshop",
+      "title": "Monash Pets Worlds Workshop",
+      "brand": "N4 Camera Store",
+      "status": "past",
+      "dateLabel": "Sat, 25 Apr 2026",
+      "description": "Pet photography workshop held with Monash University Malaysia's photography community.",
+      "link": "",
+      "images": [
+        "assets/events/placeholder-n4.jpg"
+      ],
+      "date": "2026-04-25"
+    },
+    {
+      "id": "n4-sony-monash-workshop",
+      "title": "Sony Monash Workshop",
+      "brand": "N4 Camera Store",
+      "status": "past",
+      "dateLabel": "Wed, 8 Apr 2026",
+      "description": "Sony photography workshop held with Monash University Malaysia's photography society.",
+      "link": "",
+      "images": [
+        "assets/events/placeholder-sony.jpg"
+      ],
+      "date": "2026-04-08"
+    },
+    {
+      "id": "n4-ipoh-sony-workshop",
+      "title": "Ipoh Sony Workshop",
+      "brand": "N4 Camera Store",
+      "status": "past",
+      "dateLabel": "Sun, 29 Mar 2026",
+      "description": "Sony photography workshop held in Ipoh, Perak.",
+      "link": "",
+      "images": [
+        "assets/events/placeholder-sony.jpg"
+      ],
+      "date": "2026-03-29"
+    },
+    {
+      "id": "n4-manjung-experience-center-sony-workshop",
+      "title": "Manjung N4 Experience Center Sony Workshop",
+      "brand": "N4 Camera Store",
+      "status": "past",
+      "dateLabel": "Sat, 28 Mar 2026",
+      "description": "Sony photography workshop hosted at N4's Experience Center in Manjung, Perak.",
+      "link": "",
+      "images": [
+        "assets/events/placeholder-sony.jpg"
+      ],
+      "date": "2026-03-28"
+    },
+    {
+      "id": "n4-fujifilm-workshop-artishutter",
+      "title": "Fujifilm Workshop with Artishutter",
+      "brand": "N4 Camera Store",
+      "status": "past",
+      "dateLabel": "Sat, 28 Mar 2026",
+      "description": "Fujifilm photography workshop presented with Artishutter.",
+      "link": "",
+      "images": [
+        "assets/events/placeholder-fujifilm.jpg"
+      ],
+      "date": "2026-03-28"
+    },
+    {
+      "id": "n4-kota-bharu-fujifilm-workshop",
+      "title": "Kota Bharu Fujifilm Workshop",
+      "brand": "N4 Camera Store",
+      "status": "past",
+      "dateLabel": "Sat, 14 Mar 2026",
+      "description": "Fujifilm photography workshop held in Kota Bharu, Kelantan.",
+      "link": "",
+      "images": [
+        "assets/events/placeholder-fujifilm.jpg"
+      ],
+      "date": "2026-03-14"
+    },
+    {
+      "id": "n4-xiamen-university-workshop",
+      "title": "Xiamen University Workshop",
+      "brand": "N4 Camera Store",
+      "status": "past",
+      "dateLabel": "Fri, 6 Mar 2026",
+      "description": "Photography workshop held with Xiamen University Malaysia.",
+      "link": "",
+      "images": [
+        "assets/events/placeholder-n4.jpg"
+      ],
+      "date": "2026-03-06"
+    },
+    {
+      "id": "n4-fujifilm-penang-workshop-mar",
+      "title": "Fujifilm Penang Workshop",
+      "brand": "N4 Camera Store",
+      "status": "past",
+      "dateLabel": "Sun, 1 Mar 2026",
+      "description": "Fujifilm photography workshop held in Penang.",
+      "link": "",
+      "images": [
+        "assets/events/placeholder-fujifilm.jpg"
+      ],
+      "date": "2026-03-01"
+    },
+    {
+      "id": "n4-sg-petani-workshop-sony",
+      "title": "Sungai Petani Workshop with Sony",
+      "brand": "N4 Camera Store",
+      "status": "past",
+      "dateLabel": "Sat, 28 Feb 2026",
+      "description": "Sony photography workshop held in Sungai Petani, Kedah.",
+      "link": "",
+      "images": [
+        "assets/events/placeholder-sony.jpg"
+      ],
+      "date": "2026-02-28"
+    },
+    {
+      "id": "n4-carfe-inti-event",
+      "title": "Carfe Inti Event",
+      "brand": "N4 Camera Store",
+      "status": "past",
+      "dateLabel": "Sun, 22 Feb 2026",
+      "description": "Photography event hosted by N4 Camera Store.",
+      "link": "",
+      "images": [
+        "assets/events/placeholder-n4.jpg"
+      ],
+      "date": "2026-02-22"
+    },
+    {
+      "id": "n4-workshop-with-cls-sean",
+      "title": "Workshop with CLS and Sean",
+      "brand": "N4 Camera Store",
+      "status": "past",
+      "dateLabel": "Sun, 1 Feb 2026",
+      "description": "Photography workshop hosted by N4 Camera Store.",
+      "link": "",
+      "images": [
+        "assets/events/placeholder-n4.jpg"
+      ],
+      "date": "2026-02-01"
+    },
+    {
+      "id": "n4-secret-workshop-2-jb",
+      "title": "Secret Workshop 2.0, Johor Bahru",
+      "brand": "N4 Camera Store",
+      "status": "past",
+      "dateLabel": "Sat, 31 Jan 2026",
+      "description": "Photography workshop held in Johor Bahru.",
+      "link": "",
+      "images": [
+        "assets/events/placeholder-n4.jpg"
+      ],
+      "date": "2026-01-31"
+    },
+    {
+      "id": "n4-alor-setar-canon-workshop-jan",
+      "title": "Alor Setar Canon Workshop",
+      "brand": "N4 Camera Store",
+      "status": "past",
+      "dateLabel": "Fri, 23 Jan 2026",
+      "description": "Canon photography workshop held in Alor Setar, Kedah.",
+      "link": "",
+      "images": [
+        "assets/events/placeholder-canon.jpg"
+      ],
+      "date": "2026-01-23"
+    },
+    {
+      "id": "n4-chromatic-shadow-workshop-benaz",
+      "title": "Chromatic Shadow Workshop by Benaz",
+      "brand": "N4 Camera Store",
+      "status": "past",
+      "dateLabel": "Sat, 10 Jan 2026",
+      "description": "Photography workshop on light and shadow, guest-led by Benaz.",
+      "link": "",
+      "images": [
+        "assets/events/placeholder-n4.jpg"
+      ],
+      "date": "2026-01-10"
+    },
+    {
+      "id": "n4-kelantan-sony-touch-and-try",
+      "title": "Kelantan Sony Touch and Try",
+      "brand": "N4 Camera Store",
+      "status": "past",
+      "dateLabel": "Wed, 7 Jan – Thu, 8 Jan 2026",
+      "description": "Sony hands-on touch-and-try roadshow held in Kelantan.",
+      "link": "",
+      "images": [
+        "assets/events/placeholder-sony.jpg"
+      ],
+      "date": "2026-01-07"
+    },
+    {
+      "id": "n4-creator-club-x-n4-camera-penang",
+      "title": "Creator Club X N4 Camera",
+      "brand": "N4 Camera Store",
+      "status": "past",
+      "dateLabel": "Fri, 14 Aug 2026",
+      "description": "Creator Spotlight Club meetup with N4 Camera Store in George Town's heritage quarter — a mix of a heritage photo walk, product showcase (Canon, film/SnapRoll gear), and a group hangout with local content creators.",
+      "link": "",
+      "images": [
+        "assets/events/creator-club-n4-cover-group.jpg",
+        "assets/events/creator-club-n4-heritage-walk.jpg",
+        "assets/events/creator-club-n4-booth-banner.jpg",
+        "assets/events/creator-club-n4-workshop-session.jpg",
+        "assets/events/creator-club-n4-group-photo.jpg"
+      ],
+      "placeholder": false,
+      "date": "2026-08-14"
+    },
+    {
+      "id": "n4-sony-girl-portrait-workshop-2",
+      "title": "Sony Girl Portrait Workshop 2.0",
+      "brand": "N4 Camera Store",
+      "status": "past",
+      "dateLabel": "Tue, 25 Aug 2026",
+      "description": "Hands-on Sony portrait photography workshop for women, featuring the Sony Alpha G-series lineup, with an indoor session and an outdoor group photo shoot.",
+      "link": "",
+      "images": [
+        "assets/events/sony-girl-workshop-cover-outdoor-shoot.jpg",
+        "assets/events/sony-girl-workshop-group-cameras.jpg",
+        "assets/events/sony-girl-workshop-portrait-review.jpg",
+        "assets/events/sony-girl-workshop-group-discussion.jpg",
+        "assets/events/sony-girl-workshop-photo-review.jpg"
+      ],
+      "placeholder": false,
+      "date": "2026-08-25"
+    },
+    {
+      "id": "n4-sony-tarumt-in-your-eyes-5",
+      "title": "In Your Eyes 5.0: Street & Portrait Photography (Sony X N4 Camera Store)",
+      "brand": "N4 Camera Store",
+      "status": "past",
+      "dateLabel": "August 2026 (date to be confirmed)",
+      "description": "Sony-sponsored street & portrait photography workshop with N4 Camera Store, held in George Town's heritage quarter (Lebuh Aceh) with TARUMT students — briefing session followed by an outdoor street and portrait shoot.",
+      "link": "",
+      "images": [
+        "assets/events/sony-tarumt-cover-title-screen.jpg",
+        "assets/events/sony-tarumt-street-shoot-alley.jpg",
+        "assets/events/sony-tarumt-portrait-wall-shoot.jpg",
+        "assets/events/sony-tarumt-heritage-temple-shoot.jpg",
+        "assets/events/sony-tarumt-group-camera-review.jpg"
+      ],
+      "placeholder": true,
+      "date": "2026-08-25"
+    }
+  ]
+}
