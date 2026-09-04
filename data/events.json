@@ -5,7 +5,7 @@
       "id": "n4camerastore-parkson-ioi-city-popup",
       "title": "Parkson IOI City Mall Putrajaya Pop-Up",
       "brand": "N4 Camera Store",
-      "status": "current",
+      "status": "past",
       "dateLabel": "22–25 Aug 2026, 10am–10pm",
       "description": "In-mall pop-up with live promos: spend RM500 get a free Escura SnapRoll (worth RM168), spend RM350 for a Lucky Draw entry, and BonusLink card holders get a RM30 voucher with RM300 spend.",
       "link": "https://www.instagram.com/n4camerastore/reel/DcVqoqkDxT7/",
@@ -24,7 +24,7 @@
       "id": "animangaki-2026-ulanzi",
       "title": "AniManGaki 2026",
       "brand": "Ulanzi",
-      "status": "upcoming",
+      "status": "past",
       "dateLabel": "Fri, 28 Aug – Sun, 30 Aug 2026",
       "description": "Ulanzi booth at AniManGaki 2026, Malaysia's anime & pop culture convention. Venue: Mines International Exhibition & Convention Centre, Jalan Dulang, Mines Wellness City, Seri Kembangan, Selangor.",
       "link": "https://www.instagram.com/p/DcNsHSVj1Ts/",
@@ -39,12 +39,12 @@
       "id": "sony-qb-roadshow-sep2026",
       "title": "Sony QB Roadshow",
       "brand": "Ulanzi, PGYTECH, Godox",
-      "status": "upcoming",
+      "status": "current",
       "dateLabel": "Thu, 3 Sep, 11.30am – Sun, 6 Sep 2026, 12pm",
-      "description": "Joint roadshow with Sony at Queensbay Mall, Persiaran Bayan Indah, Bayan Lepas, Penang, featuring Ulanzi, PGYTECH, and Godox gear.",
+      "description": "\"Start the Holiday with Alpha\" roadshow with Sony at Queensbay Mall, Penang — official Sony Alpha member event featuring Ulanzi, PGYTECH, Godox, and Bambu Lab gear alongside the Sony Alpha lineup.",
       "link": "",
       "images": [
-        "assets/events/placeholder-sony.jpg"
+        "assets/events/sony-qb-roadshow-cover.jpg"
       ],
       "date": "2026-09-03"
     },
@@ -202,7 +202,12 @@
       "link": "",
       "placeholder": false,
       "images": [
-        "assets/events/bambu-lab-queensbay-roadshow.jpg"
+        "assets/events/bambu-lab-queensbay-cover.jpg",
+        "assets/events/bambu-lab-queensbay-candid-5.jpg",
+        "assets/events/bambu-lab-queensbay-candid-1.jpg",
+        "assets/events/bambu-lab-queensbay-candid-2.jpg",
+        "assets/events/bambu-lab-queensbay-candid-3.jpg",
+        "assets/events/bambu-lab-queensbay-candid-4.jpg"
       ],
       "date": "2026-07-22"
     },
@@ -642,6 +647,52 @@
       ],
       "placeholder": true,
       "date": "2026-08-25"
+    },
+    {
+      "id": "sony-alpha-mini-bird-festival-taiping",
+      "title": "Sony Alpha Mini Bird Festival Race 1 — North, Taiping",
+      "brand": "N4 Camera Store",
+      "status": "past",
+      "dateLabel": "Fri, 24 Jul – Sun, 26 Jul 2026",
+      "description": "Bird photography competition and guided walk in Taiping, Perak, sponsored by N4 Camera Store with Sony Alpha gear loans, sharing sessions, and a bird photography race. Open to all camera brands, RM50 registration.",
+      "link": "",
+      "images": [
+        "assets/events/sony-bird-racing-taiping-cover.jpg"
+      ],
+      "placeholder": false,
+      "date": "2026-07-24"
+    },
+    {
+      "id": "polaroid-go-gen3-exhibition-penang",
+      "title": "Polaroid Go Gen 3 Exhibition, Penang",
+      "brand": "Polaroid",
+      "status": "past",
+      "dateLabel": "Mon, 6 Jul – Sun, 19 Jul 2026, 11am–6pm",
+      "description": "Two-week exhibition at Jetty 35 (Hall 2), Penang, showcasing the Polaroid Go Gen 3 — the world's smallest instant analog camera — including featured instant-photography works from local photographers. Free admission. The Fri, 10 Jul launch party is tracked as its own event.",
+      "link": "",
+      "images": [
+        "assets/events/polaroid-gen3-exhibition-cover.jpg"
+      ],
+      "placeholder": false,
+      "date": "2026-07-06"
+    },
+    {
+      "id": "malaysia-gift-fair-2026",
+      "title": "16th Malaysia Gifts Fair 2026",
+      "brand": "N4 Camera Store, PGYTECH, Ulanzi, Polaroid",
+      "status": "past",
+      "dateLabel": "Jul 2026",
+      "description": "N4 Camera Store booth at the 16th Malaysia Gifts Fair 2026 (\"Redefining Sustainable Gifting For a Better Tomorrow\"), featuring PGYTECH, Ulanzi, and Polaroid gear alongside N4's own lineup.",
+      "link": "",
+      "images": [
+        "assets/events/malaysia-gift-fair-2026-cover.jpg",
+        "assets/events/malaysia-gift-fair-2026-candid-2.jpg",
+        "assets/events/malaysia-gift-fair-2026-candid-3.jpg",
+        "assets/events/malaysia-gift-fair-2026-candid-4.jpg",
+        "assets/events/malaysia-gift-fair-2026-candid-5.jpg"
+      ],
+      "placeholder": true,
+      "date": "2026-07-01"
     }
   ]
 }
