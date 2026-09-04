@@ -49,10 +49,26 @@
 
 <script src="assets/app.js"></script>
 <script>
+const tiktokIcon = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M16.5 2h3.2c.2 1.9 1.3 3.5 3.3 4v3.3c-1.8.1-3.4-.4-4.9-1.4v7.4c0 3.9-3.2 6.9-7 6.7-3.5-.2-6.3-3.1-6.4-6.6-.1-3.9 3.1-7.1 7-7 .3 0 .6 0 .9.1v3.5c-.3-.1-.6-.2-.9-.2-1.8 0-3.2 1.5-3.1 3.3.1 1.6 1.4 2.9 3 3 1.8.1 3.3-1.4 3.3-3.2V2Z" fill="#fff"/>
+</svg>`;
+
+function tiktokWatchCard(url) {
+  return `<a class="ig-watch tiktok-watch" href="${url}" target="_blank" rel="noopener">
+    <div class="ig-watch-badge">${tiktokIcon}<span>Watch on TikTok</span></div>
+  </a>`;
+}
+
+// TikTok's own public oEmbed endpoint (https://www.tiktok.com/oembed) allows direct
+// cross-origin requests, so it's called straight from the browser — no serverless proxy
+// needed. (The site used to route this through a Netlify function; that's gone now that
+// the site runs on GitHub Pages, which has no backend, so we call TikTok directly instead.)
 async function embedTikTok(url, slotEl) {
   slotEl.innerHTML = `<div class="embed-slot">Loading…</div>`;
   try {
-    const res = await fetch(`/api/tiktok-oembed?url=${encodeURIComponent(url)}`);
+    const params = new URLSearchParams({ url });
+    const res = await fetch(`https://www.tiktok.com/oembed?${params.toString()}`);
+    if (!res.ok) throw new Error("oEmbed request failed");
     const data = await res.json();
     if (data.html) {
       slotEl.innerHTML = `<div class="embed-slot">${data.html}</div>`;
@@ -67,10 +83,14 @@ async function embedTikTok(url, slotEl) {
         window.tiktokEmbed.lib.render();
       }
     } else {
-      slotEl.innerHTML = `<div class="embed-slot">Couldn't embed this link.</div>`;
+      slotEl.classList.add("ig-slot");
+      slotEl.innerHTML = tiktokWatchCard(url);
     }
   } catch (e) {
-    slotEl.innerHTML = `<div class="embed-slot">Couldn't reach TikTok.</div>`;
+    // Fall back to a simple watch card rather than an error message — the video is
+    // still one click away even if the inline embed can't load.
+    slotEl.classList.add("ig-slot");
+    slotEl.innerHTML = tiktokWatchCard(url);
   }
 }
 
