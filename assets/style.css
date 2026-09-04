@@ -165,6 +165,7 @@ td.brandcell{display:flex;align-items:center;gap:8px;font-weight:600;}
   background:linear-gradient(to top, rgba(0,0,0,.85), rgba(0,0,0,0));
 }
 .ig-watch:not(.has-thumb) .ig-watch-badge{flex-direction:column;gap:10px;padding:20px;}
+.ig-watch.tiktok-watch{background:linear-gradient(135deg,#010101,#25f4ee,#fe2c55);}
 .video-card .meta{padding:12px 14px;}
 .video-card .meta .brandline{display:flex;align-items:center;gap:6px;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:var(--ink-soft);}
 .video-card .meta h4{margin:6px 0 2px;font-size:.9rem;line-height:1.35;}
