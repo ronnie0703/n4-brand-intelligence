@@ -1,45 +1,73 @@
 {
-  "notes": "Populated 23 Aug 2026 from each brand's live TikTok and Instagram profiles (pinned/most recent videos + Reels). postedAt is the video's actual upload date — decoded from the video ID for TikTok, read off the post itself for Instagram. Instagram entries carry a thumbnail (a real frame captured from the post, since Instagram's embed widget needs Meta API access N4 doesn't have) — swap assets/videos/ig-<brand>.jpg for a fresh capture whenever the video changes. Add a new entry whenever a fresh video goes up — platform must be 'tiktok' or 'instagram' for the embed to render automatically. The site always sorts videos by postedAt (newest first), so just add entries in any order.",
+  "notes": "Populated 23 Aug 2026 from each brand's live TikTok and Instagram profiles (pinned/most recent videos + Reels); refreshed 4 Sep 2026 with each brand's latest Reel/TikTok as of that date (older entries kept below for history). postedAt is the video's actual upload date — decoded from the video ID for TikTok, read off the post itself for Instagram. Instagram entries carry a thumbnail (a real frame captured from the post, since Instagram's embed widget needs Meta API access N4 doesn't have) — swap assets/videos/ig-<brand>.jpg for a fresh capture whenever the video changes. Add a new entry whenever a fresh video goes up — platform must be 'tiktok' or 'instagram' for the embed to render automatically. The site always sorts videos by postedAt (newest first), so just add entries in any order.",
   "videos": [
     {
       "brand": "PGYTECH",
       "platform": "instagram",
-      "url": "https://www.instagram.com/pgytech_malaysia/reel/DcVpko7j_1j/",
-      "caption": "Cream & Carry Everything — OneGo Lite Backpack in 16L Cream",
-      "postedAt": "2026-08-22",
+      "url": "https://www.instagram.com/pgytech_malaysia/reel/DcnyQwADf4X/",
+      "caption": "235mm brings the wild to you — bridge arches, deer in the clearing, a cat on a park bench, pulled in sharp with the RetroVa Vintage Imaging Kit's 2.35x telephoto lens. Real optical glass, no digital cropping.",
+      "postedAt": "2026-08-30",
       "thumbnail": "assets/videos/ig-pgytech.jpg"
     },
     {
       "brand": "Ulanzi",
       "platform": "instagram",
-      "url": "https://www.instagram.com/ulanzi_malaysia/reel/DcTSkzFFQ_6/",
-      "caption": "A tripod that opens itself? Meet the SK-21 Magnetic Auto-Open Tripod",
-      "postedAt": "2026-08-22",
+      "url": "https://www.instagram.com/ulanzi_malaysia/reel/Dc21-XjRnZZ/",
+      "caption": "Start The Holiday with Alpha — Ulanzi is at Queensbay Mall! Buy 1 (10% off), Buy 2 (15% off), Buy 3 (25% off), plus a Lucky Draw",
+      "postedAt": "2026-09-04",
       "thumbnail": "assets/videos/ig-ulanzi.jpg"
     },
     {
       "brand": "N4 Camera Store",
       "platform": "instagram",
-      "url": "https://www.instagram.com/n4camerastore/reel/DcVqoqkDxT7/",
-      "caption": "Parkson IOI City Mall Putrajaya pop-up, 22–25 Aug — spend RM500, get a free SnapRoll",
-      "postedAt": "2026-08-22",
+      "url": "https://www.instagram.com/n4camerastore/reel/Dc3HdZGjyYn/",
+      "caption": "Start The Holiday with Alpha — booth tour of the Sony Alpha Roadshow at Queensbay Mall, 3–6 Sept, featuring PGYTECH, Ulanzi, Godox and Bambu Lab gear (co-posted with Godox and others)",
+      "postedAt": "2026-09-04",
       "thumbnail": "assets/videos/ig-n4camerastore.jpg"
     },
     {
       "brand": "Godox",
       "platform": "instagram",
-      "url": "https://www.instagram.com/godox_malaysia/reel/DcTImhwuMZ1/",
-      "caption": "Not just RGB — RGBWW opens up more colour and lighting options",
-      "postedAt": "2026-08-22",
+      "url": "https://www.instagram.com/n4camerastore/reel/Dc3HdZGjyYn/",
+      "caption": "Start The Holiday with Alpha — booth tour of the Sony Alpha Roadshow at Queensbay Mall, 3–6 Sept, featuring PGYTECH, Ulanzi, Godox and Bambu Lab gear (co-posted with N4 Camera Store and others)",
+      "postedAt": "2026-09-04",
       "thumbnail": "assets/videos/ig-godox.jpg"
     },
     {
       "brand": "Polaroid",
       "platform": "instagram",
-      "url": "https://www.instagram.com/polaroid_msia/reel/DcOCEtoDbIu/",
-      "caption": "Summer breeze, golden sunsets, and a Polaroid Go Generation 3",
-      "postedAt": "2026-08-20",
+      "url": "https://www.instagram.com/azwanali/reel/DcgSNAdv475/",
+      "caption": "Labuan Bajo + Polaroid Go Gen 3 — creator collab with @azwanali",
+      "postedAt": "2026-08-26",
       "thumbnail": "assets/videos/ig-polaroid.jpg"
+    },
+    {
+      "brand": "PGYTECH",
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@pgytech.malaysia/video/7679019855286209812",
+      "caption": "OneGo Lite everyday backpack",
+      "postedAt": "2026-08-28"
+    },
+    {
+      "brand": "Ulanzi",
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@ulanzi.my/video/7681276491245554965",
+      "caption": "Start The Holiday with Alpha — Ulanzi at Queensbay Mall, exclusive deals + Lucky Draw",
+      "postedAt": "2026-09-03"
+    },
+    {
+      "brand": "N4 Camera Store",
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@n4camerastore/video/7676051766344961301",
+      "caption": "Merdeka Giveaway — celebrating Bulan Kemerdekaan with N4 Camera Store",
+      "postedAt": "2026-08-20"
+    },
+    {
+      "brand": "Godox",
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@godox.malaysia/video/7675560931384151304",
+      "caption": "Building a lighting setup step by step",
+      "postedAt": "2026-08-19"
     },
     {
       "brand": "PGYTECH",
