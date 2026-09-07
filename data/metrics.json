@@ -1,18 +1,19 @@
 {
   "companyName": "N4",
-  "lastUpdated": "2026-08-23",
-  "notes": "Refreshed 23 Aug 2026 by reading each brand's live Instagram and TikTok profile directly (follower counts, likes, and recent video view counts). Posting-frequency/median-view/traffic-source figures that need a fuller multi-week review are carried over from the 16 Aug manual report until the next deep pass. Add a new entry to each brand's weeklyHistory array every Monday to keep building the trend lines.",
+  "lastUpdated": "2026-09-07",
+  "notes": "Refreshed 23 Aug 2026 by reading each brand's live Instagram and TikTok profile directly (follower counts, likes, and recent video view counts). Posting-frequency/median-view/traffic-source figures that need a fuller multi-week review are carried over from the 16 Aug manual report until the next deep pass. Refreshed again 7 Sep 2026 (follower/post/like counts only, same live-profile method; postsPerWeek/medianViews/traffic-source figures still carried over pending a fuller pass). Add a new entry to each brand's weeklyHistory array every Monday to keep building the trend lines.",
   "brands": [
     {
       "id": "pgytech",
       "name": "PGYTECH",
       "color": "#e8542a",
       "logo": "assets/logos/pgytech.png",
-      "instagram": { "handle": "@pgytech_malaysia", "url": "https://instagram.com/pgytech_malaysia", "followers": 1558, "posts": 387, "postsPerWeek": 3.8, "medianViews": 218, "bestVideoViews": 8822, "viewsPerFollower": 0.14, "medianLengthSec": 24 },
-      "tiktok": { "handle": "@pgytech.malaysia", "url": "https://www.tiktok.com/@pgytech.malaysia", "followers": 1579, "likes": 1753, "postsPerWeek": 3.8, "medianViews": 231, "bestVideoViews": 19300, "viewsPerFollower": 0.15, "views60d": 19800, "views60dChangePct": 41.3, "profileViews60d": 443, "likes60d": 142, "shares60d": 21, "trafficForYouPct": 53.3, "trafficSearchPct": 40.9, "trafficOtherPct": 5.8 },
+      "instagram": { "handle": "@pgytech_malaysia", "url": "https://instagram.com/pgytech_malaysia", "followers": 1560, "posts": 398, "postsPerWeek": 3.8, "medianViews": 218, "bestVideoViews": 8822, "viewsPerFollower": 0.14, "medianLengthSec": 24 },
+      "tiktok": { "handle": "@pgytech.malaysia", "url": "https://www.tiktok.com/@pgytech.malaysia", "followers": 1584, "likes": 1778, "postsPerWeek": 3.8, "medianViews": 231, "bestVideoViews": 19300, "viewsPerFollower": 0.15, "views60d": 19800, "views60dChangePct": 41.3, "profileViews60d": 443, "likes60d": 142, "shares60d": 21, "trafficForYouPct": 53.3, "trafficSearchPct": 40.9, "trafficOtherPct": 5.8 },
       "weeklyHistory": [
         { "week": "2026-08-16", "igFollowers": 1557, "ttFollowers": 1572 },
-        { "week": "2026-08-23", "igFollowers": 1558, "ttFollowers": 1579 }
+        { "week": "2026-08-23", "igFollowers": 1558, "ttFollowers": 1579 },
+        { "week": "2026-09-06", "igFollowers": 1560, "ttFollowers": 1584 }
       ]
     },
     {
@@ -20,11 +21,12 @@
       "name": "Ulanzi",
       "color": "#1f6feb",
       "logo": "assets/logos/ulanzi.png",
-      "instagram": { "handle": "@ulanzi_malaysia", "url": "https://instagram.com/ulanzi_malaysia", "followers": 5759, "posts": 1642, "postsPerWeek": 3.3, "medianViews": 393, "bestVideoViews": 2700, "viewsPerFollower": 0.07, "medianLengthSec": 33 },
-      "tiktok": { "handle": "@ulanzi.my", "url": "https://www.tiktok.com/@ulanzi.my", "followers": 42100, "likes": 66500, "postsPerWeek": 3.5, "medianViews": 1600, "bestVideoViews": 10700, "viewsPerFollower": 0.04 },
+      "instagram": { "handle": "@ulanzi_malaysia", "url": "https://instagram.com/ulanzi_malaysia", "followers": 6160, "posts": 1657, "postsPerWeek": 3.3, "medianViews": 393, "bestVideoViews": 2700, "viewsPerFollower": 0.07, "medianLengthSec": 33 },
+      "tiktok": { "handle": "@ulanzi.my", "url": "https://www.tiktok.com/@ulanzi.my", "followers": 42500, "likes": 66900, "postsPerWeek": 3.5, "medianViews": 1600, "bestVideoViews": 10700, "viewsPerFollower": 0.04 },
       "weeklyHistory": [
         { "week": "2026-08-16", "igFollowers": 5688, "ttFollowers": 42000 },
-        { "week": "2026-08-23", "igFollowers": 5759, "ttFollowers": 42100 }
+        { "week": "2026-08-23", "igFollowers": 5759, "ttFollowers": 42100 },
+        { "week": "2026-09-06", "igFollowers": 6160, "ttFollowers": 42500 }
       ]
     },
     {
@@ -32,11 +34,12 @@
       "name": "Polaroid",
       "color": "#8957e5",
       "logo": "assets/logos/polaroid.png",
-      "instagram": { "handle": "@polaroid_msia", "url": "https://instagram.com/polaroid_msia", "followers": 6494, "posts": 449, "postsPerWeek": 1.3, "medianViews": 1876, "bestVideoViews": 5295, "viewsPerFollower": 0.29, "medianLengthSec": 47 },
+      "instagram": { "handle": "@polaroid_msia", "url": "https://instagram.com/polaroid_msia", "followers": 6477, "posts": 454, "postsPerWeek": 1.3, "medianViews": 1876, "bestVideoViews": 5295, "viewsPerFollower": 0.29, "medianLengthSec": 47 },
       "tiktok": null,
       "weeklyHistory": [
         { "week": "2026-08-16", "igFollowers": 6469, "ttFollowers": null },
-        { "week": "2026-08-23", "igFollowers": 6494, "ttFollowers": null }
+        { "week": "2026-08-23", "igFollowers": 6494, "ttFollowers": null },
+        { "week": "2026-09-06", "igFollowers": 6477, "ttFollowers": null }
       ]
     },
     {
@@ -44,11 +47,12 @@
       "name": "N4 Camera Store",
       "color": "#2ea043",
       "logo": "assets/logos/n4camerastore.png",
-      "instagram": { "handle": "@n4camerastore", "url": "https://instagram.com/n4camerastore", "followers": 13100, "posts": 2502, "postsPerWeek": 0.5, "medianViews": 162279, "bestVideoViews": 366772, "viewsPerFollower": 12.32, "medianLengthSec": 64 },
-      "tiktok": { "handle": "@n4camerastore", "url": "https://www.tiktok.com/@n4camerastore", "followers": 74800, "likes": 269000, "postsPerWeek": null, "medianViews": 969, "bestVideoViews": 4403, "viewsPerFollower": null },
+      "instagram": { "handle": "@n4camerastore", "url": "https://instagram.com/n4camerastore", "followers": 13200, "posts": 2523, "postsPerWeek": 0.5, "medianViews": 162279, "bestVideoViews": 366772, "viewsPerFollower": 12.32, "medianLengthSec": 64 },
+      "tiktok": { "handle": "@n4camerastore", "url": "https://www.tiktok.com/@n4camerastore", "followers": 75000, "likes": 270400, "postsPerWeek": null, "medianViews": 969, "bestVideoViews": 4403, "viewsPerFollower": null },
       "weeklyHistory": [
         { "week": "2026-08-16", "igFollowers": 13170, "ttFollowers": 74800 },
-        { "week": "2026-08-23", "igFollowers": 13100, "ttFollowers": 74800 }
+        { "week": "2026-08-23", "igFollowers": 13100, "ttFollowers": 74800 },
+        { "week": "2026-09-06", "igFollowers": 13200, "ttFollowers": 75000 }
       ]
     },
     {
@@ -57,10 +61,11 @@
       "color": "#d29922",
       "logo": "assets/logos/techempire.png",
       "instagram": null,
-      "tiktok": { "handle": "@techempire_my", "url": "https://www.tiktok.com/@techempire_my", "followers": 30800, "likes": 58000, "postsPerWeek": 4.0, "medianViews": 3400, "bestVideoViews": 14000, "viewsPerFollower": 0.11 },
+      "tiktok": { "handle": "@techempire_my", "url": "https://www.tiktok.com/@techempire_my", "followers": 31200, "likes": 58300, "postsPerWeek": 4.0, "medianViews": 3400, "bestVideoViews": 14000, "viewsPerFollower": 0.11 },
       "weeklyHistory": [
         { "week": "2026-08-16", "igFollowers": null, "ttFollowers": 30800 },
-        { "week": "2026-08-23", "igFollowers": null, "ttFollowers": 30800 }
+        { "week": "2026-08-23", "igFollowers": null, "ttFollowers": 30800 },
+        { "week": "2026-09-06", "igFollowers": null, "ttFollowers": 31200 }
       ]
     },
     {
@@ -68,10 +73,11 @@
       "name": "Godox",
       "color": "#6e7681",
       "logo": "assets/logos/godox.png",
-      "instagram": { "handle": "@godox_malaysia", "url": "https://instagram.com/godox_malaysia", "followers": 2879, "posts": 464, "postsPerWeek": null, "medianViews": null, "bestVideoViews": null, "viewsPerFollower": null },
-      "tiktok": { "handle": "@godox.malaysia", "url": "https://www.tiktok.com/@godox.malaysia", "followers": 698, "likes": 4687, "postsPerWeek": null, "medianViews": 582, "bestVideoViews": 672, "viewsPerFollower": null },
+      "instagram": { "handle": "@godox_malaysia", "url": "https://instagram.com/godox_malaysia", "followers": 2927, "posts": 477, "postsPerWeek": null, "medianViews": null, "bestVideoViews": null, "viewsPerFollower": null },
+      "tiktok": { "handle": "@godox.malaysia", "url": "https://www.tiktok.com/@godox.malaysia", "followers": 764, "likes": 5106, "postsPerWeek": null, "medianViews": 582, "bestVideoViews": 672, "viewsPerFollower": null },
       "weeklyHistory": [
-        { "week": "2026-08-23", "igFollowers": 2879, "ttFollowers": 698 }
+        { "week": "2026-08-23", "igFollowers": 2879, "ttFollowers": 698 },
+        { "week": "2026-09-06", "igFollowers": 2927, "ttFollowers": 764 }
       ]
     },
     {
